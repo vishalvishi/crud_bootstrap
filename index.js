@@ -1,8 +1,8 @@
 
-$(function() 
-{
-     tableForm();
-});
+//$(function() 
+//{
+ //    tableForm();
+//});
 
 var selectedRow = null;
 var l = 0;
