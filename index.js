@@ -396,8 +396,8 @@ function tableForm() {
         <td>${element.course}</td>
         <td>${element.email}</td>
         <td>${element.phone}</td>
-        <td class="pe-auto" data-toggle="modal" data-target="#myModal1" onclick="view_base_64(${index})">${element.file.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(element.dat).concat(".").concat("pdf")}</td>
-        <td class="pe-auto"  data-toggle="modal" data-target="#myModal" onclick="img_base_64(${index})">${element.photo.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(element.dat).concat(".").concat("jpg")}</td>
+        <td  data-toggle="modal" data-target="#myModal1" onclick="view_base_64(${index})">${element.file.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(element.dat).concat(".").concat("pdf")}</td>
+        <td  data-toggle="modal" data-target="#myModal" onclick="img_base_64(${index})">${element.photo.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(element.dat).concat(".").concat("jpg")}</td>
         <td><button class="btn btn-outline-info" id="vi"onclick="dataView(this,${index});vv_photo(${index});vv_file(${index});">VIEW</button><button class="btn btn-outline-secondary" id="ud" onclick="dataView(this,${index})">UPDATE</button><button class="btn btn-outline-danger" id="dd" onclick="dataView(this,${index})">DELETE</button></td></tr>`
     });
    
