@@ -1,8 +1,8 @@
 
-//$(function() 
-//{
- //    tableForm();
-//});
+$(function() 
+{
+     tableForm();
+});
 
 var selectedRow = null;
 var l = 0;
@@ -203,7 +203,7 @@ function view_base_64(indexData) {
     $("#fl1").attr("src",nb.base_64_string);
     $("#fl3").attr("href" ,nb.base_64_string);
     $("#fl3").attr("download",nb.file.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(nb.dat).concat(".").concat("pdf"))
-      $("#myModal1").modal("show");
+     // $("#myModal1").modal("show");
 
    $("#base_64").attr("src",nb.base_64_string);
    $("#file_box4").attr("href" ,nb.base_64_string);
@@ -245,7 +245,7 @@ function img_base_64(indexData) {
           $("#mg1").attr("src",ib.img_base_64_string);
           $("#mg3").attr("href" ,ib.img_base_64_string);
           $("#mg3").attr("download",ib.photo.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(ib.dat).concat(".").concat("jpg"))
-            $("#myModal").modal("show");
+           // $("#myModal").modal("show");
        
   
     console.log(ib.img_base_64_string, "action ffgfgfgfgfggdetails");
@@ -397,7 +397,7 @@ function tableForm() {
         <td>${element.email}</td>
         <td>${element.phone}</td>
         <td  data-toggle="modal" data-target="#myModal1" onclick="view_base_64(${index})">${element.file.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(element.dat).concat(".").concat("pdf")}</td>
-        <td  data-toggle="modal" data-target="#myModal" onclick="img_base_64(${index})">${element.photo.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(element.dat).concat(".").concat("jpg")}</td>
+        <td   data-toggle="modal" data-target="#myModal" onclick="img_base_64(${index})">${element.photo.split(' ').join('_').replace("C:\\fakepath\\", "").split('.').slice(0, -1).join('.').concat("_").concat(element.dat).concat(".").concat("jpg")}</td>
         <td><button class="btn btn-outline-info" id="vi"onclick="dataView(this,${index});vv_photo(${index});vv_file(${index});">VIEW</button><button class="btn btn-outline-secondary" id="ud" onclick="dataView(this,${index})">UPDATE</button><button class="btn btn-outline-danger" id="dd" onclick="dataView(this,${index})">DELETE</button></td></tr>`
     });
    
