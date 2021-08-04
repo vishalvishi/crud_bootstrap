@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        dynamic form
+    </title>
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0">
+  <!---  <link rel="stylesheet" href="/asset/js/css/popup.css">-->
+    <script src="/asset/js/jQuerry.js"></script>
+    <script src="/asset/js/css/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/asset/js/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+@media (max-width: 768px)
+ {
+    .m1{
+        display:none;
+    }
+}
+
+  </style>
+</head>
+ 
+
+<body  >
+    
+    <div  class="container" >
+    <div><center><h1 class="p-3 mb-2 bg-primary text-white">CANDIDATE REGISTRATION FORM</h1></center></div>
+    
+<div  class="d-flex flex-row">  
+     <!--style="border-radius:20px;width:900px;float:left;text-align:left; padding:50px;">-->
+
+
+      <div>
+        <img class="m1" src="asset/js/css/img/img3.jpg" width="100%" height="430px"  />
+     </div>
+
+
+        <!-- Background image -->
+    <div >
+
+        <form class="p-3 mb-2 bg-light text-dark"  onsubmit="event.preventDefault()">
+
+           
+
+     <div class="row" >
+       
+            <div class="col">
+                <label class="form-label" for="name">NAME</label>
+                <input
+                class="form-control"
+                    type="text" name="name" id="name" placeholder="Name" />
+                </div></br>
+             <div class="col"><label class="form-label" for="DOB">DOB</label>
+                <input
+                   class="form-control"
+                    type="DATE" name="lname" id="dob" />
+            </div>
+        </div></br>
+        <div class="row" >
+             <div class="col">  <label class="form-label" for="AGE">AGE</label>
+                <input
+                   class="form-control"
+                    type="text" name="age" id="age" placeholder="Age" />
+                    </div><br>
+               <div class="col"><label class="form-label" for="course">COURSE</label>
+                <select
+                   class="form-control"
+                    id="course">
+                    <option class="dropdown" value="">----</option>
+                    <option class="dropdown" value="HTML">HTML</option>
+                    <option class="dropdown" value="JAVA SCRIPT">JAVA SCRIPT</option>
+                    <option class="dropdown" value="CSS">CSS</option>
+                    <option class="dropdown" value="C++">C++</option>
+                </select>
+                </div>
+                </div><br>
+                <div class="row" >
+               <div class="col"><label class="form-label" for="EMAIL">EMAIL</label>
+                <input
+                   class="form-control"
+                    type="email" size="30" name="email" id="email" placeholder="Email-Id" />
+                    </div><br>
+              <div class="col"> <label class="form-label" for="PHONE">PHONE</label>
+                <input
+                   class="form-control"
+                    type="text" name="PHONE" id="phone" placeholder="Phone Number" />
+                </div>
+            <br>
+            
+            <div ><label class="form-label" for="certificate">CERTIFICATE</label><br>
+                <input  type="file" class="form-control" id="file" name="file" accept="application/pdf" onchange="fileUploaded()">
+                <a href="#" onclick="v_file()"><textarea style="display:none;"class="form-control" id="file7"
+                        disabled></textarea></a>
+                        </div><br>
+               <div> 
+                   <button class="btn btn-info" style="display:none;" id="f_edit">EDIT</button>
+                </div><br>
+                <div><label class="form-label" for="photo">PHOTO</label><br>
+                <input type="file" id="photo" class="form-control" name="photo" accept=".jpg, .jpeg" onchange="imageUploaded()">
+                <a href="#" onclick="v_photo()"><textarea style="display:none;" class="form-control" id="photo7"
+                        disabled></textarea></a>
+                        </div><br>
+               <div>
+                        <button class="btn btn-info "style="display:none;"  id="p_edit">EDIT</button>
+                        </div>
+            </div>            
+                        <br>
+               <div><center>
+                        <input class="btn btn-primary" id="submit" type="submit" value="SUBMIT" />
+                       
+                <input  class="btn btn-primary" id="d_reset" type="reset" value="RESET" />
+            </center>
+            </div>
+            
+        </form><br>
+       <center> <button class="btn btn-primary " style="display:none;"  id="d_add" onclick="add_more()">ADD MORE</button>
+        <button class="btn btn-primary " style="display:none;"  id="d_update" id="update"
+                    >UPDATE</button></center>
+        
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-condensed table-striped "  id="employeeList"  >
+        <thead class="table-dark" >
+            <tr >
+                <th>NAME</th>
+                <th>DOB</th>
+                <th>AGE</th>
+                <th>COURSE</th>
+                <th>EMAIL</th>
+                <th>PHONE</th>
+                <th>CERTIFICATE</th>
+                <th>PHOTO</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody id="u_data">
+
+        </tbody>
+    </table>
+    <br>
+</div>
+
+        <div class="container">
+            <!-- The Modal -->
+            <div class="modal fade pl-0"  id="myModal">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <br>
+                    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <center><b><p>CERTIFICATE<p></b></center>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="modal-body">                           
+                    <p id=hdg></p>
+                  <img id="mg1" src="" width="100%" heigth="100%" alt="image"/><br>
+                  </div>
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <a id="mg3" class="btn btn-secondary" href="" download=""> Dowload</a>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="container">
+            <!-- The Modal -->
+            <div class="modal fade pl-0"  id="myModal1">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <br>
+                    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <center><b><p>FILE<p></b></center>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="modal-body">                           
+                    <p id=hdg1></p>
+                  <iframe id="fl1" src="" width="100%" heigth="100%" alt="file"></iframe><br>
+                  </div>
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <a id="fl3" class="btn btn-secondary" href="" download=""> Dowload</a>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+       
+
+
+                    
+
+                    
+                      
+
+        <!--- <button id="bl2" onclick="showTable()"style="position: absolute;padding:8px;top:90%;border-radius:10px;left:40%;" class="b11">VIEW ALL DATA</button>
+            -->
+
+        <!--- <button onclick="hideTable()" style="padding:15px;background-color: red;text-align: center;" class="b11">CLOSE</button>-->
+
+       
+          
+     <!---   <div id="img_box">
+            <img class="imge" id="img_box1"
+                src="" /><br>
+            <a id="img_box2" href="" download=""><button 
+                class="btn btn-secondary"  >Dowload</button></a><br>
+           
+        </div>
+        <div id="filebox">
+            <img class="imge" id="imgBase_64" /><br>
+            <a id="img_box3"  href="" download=""><button  class="btn btn-secondary" >Dowload</button></a><br>
+           
+        </div>
+        <div id="viewbox">
+            <iframe  src="" class="fle"id="base_64"></iframe><br>
+            <a id="file_box4"  href="" download=""><button  class="btn btn-secondary " >Dowload</button></a><br>
+           
+        </div>
+        <div id="file_box">
+            <iframe src="" class="fle" id="file_box1"
+                frameborder="0"></iframe><br>
+            <a id="file_box2"  href="" download=""><button  class="btn btn-secondary " >Dowload</button></a><br>
+            
+        </div>-->
+
+       
+
+    <script src="/asset/js/index.js"></script><br>
+
+
+
+    <!--- <div id="table_modal1"style=";" style1="border:solid 2px rgb(255, 255, 255);position: relative;box-shadow: 20px 20px 20px black;">-->
+    <br>
+    <!--</div>-->
+</div>
+</body>
+
+</html>
