@@ -7,17 +7,17 @@
     </title>
     <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0">
   <!---  <link rel="stylesheet" href="/asset/js/css/popup.css">-->
-   <script src="jQuerry.js"></script>
    
+    <script src="bootstrap.min.js"></script>
     <link rel="stylesheet" href="bootstrap.min.css">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
+ <style>
 @media (max-width: 768px)
  {
-    .m1{
-        display:none;
+    #m1{
+        flex-direction: column;
     }
 }
 
@@ -28,86 +28,94 @@
 <body  >
     
     <div  class="container" >
-    <div><center><h1 class="p-5 mb-2 bg-primary text-white">CANDIDATE REGISTRATION FORM</h1></center></div>
+    <div><center><h1 class="p-3 mb-2 bg-primary text-white">CANDIDATE REGISTRATION FORM</h1></center></div>
     
-<div  class="d-flex flex-row">  
+<div id="m1" class="d-flex flex-row">  
      <!--style="border-radius:20px;width:900px;float:left;text-align:left; padding:50px;">-->
 
 
-      <div>
-        <img class="m1" src="img3.jpg" width="100%" height="430px"  />
+      <div class="col-6">
+        <img  src="img3.jpg" width="100%" height="490px"  />
      </div>
 
 
         <!-- Background image -->
-    <div >
+    <div class="col-6" >
 
-        <form class="p-5 mb-2 bg-light text-dark"  onsubmit="event.preventDefault()">
+        <form class="p-5  bg-light text-dark"  onsubmit="event.preventDefault()">
 
            
 
-     <div class="row" >
-       
-            <div class="col">
-                <label class="form-label" for="name">NAME</label>
-                <input
-                class="form-control"
-                    type="text" name="name" id="name" placeholder="Name" />
-                </div></br>
-             <div class="col"><label class="form-label" for="DOB">DOB</label>
-                <input
-                   class="form-control"
-                    type="DATE" name="lname" id="dob" />
-            </div>
-        </div></br>
-        <div class="row" >
-             <div class="col">  <label class="form-label" for="AGE">AGE</label>
-                <input
-                   class="form-control"
-                    type="text" name="age" id="age" placeholder="Age" />
-                    </div><br>
-               <div class="col"><label class="form-label" for="course">COURSE</label>
-                <select
-                   class="form-control"
-                    id="course">
-                    <option class="dropdown" value="">----</option>
-                    <option class="dropdown" value="HTML">HTML</option>
-                    <option class="dropdown" value="JAVA SCRIPT">JAVA SCRIPT</option>
-                    <option class="dropdown" value="CSS">CSS</option>
-                    <option class="dropdown" value="C++">C++</option>
-                </select>
-                </div>
+            <div class="row">
+                <div class="col-6">
+                    <label class="form-label" for="name">NAME</label>
+                    <input
+                    class="form-control"
+                        type="text" name="name" id="name" placeholder="Name" />
+                    </div></br>
+                 <div class="col-6"><label class="form-label" for="DOB">DOB</label>
+                    <input
+                       class="form-control"
+                        type="DATE" name="lname" id="dob" />
+                    </div>
                 </div><br>
-                <div class="row" >
-               <div class="col"><label class="form-label" for="EMAIL">EMAIL</label>
-                <input
-                   class="form-control"
-                    type="email" size="30" name="email" id="email" placeholder="Email-Id" />
+                <div class="row">
+                    <div class="col-6"><label class="form-label" for="AGE">AGE</label>
+                        <input
+                           class="form-control"
+                            type="text" name="age" id="age" placeholder="Age" />
+                            </div><br>
+                       <div class="col-6"><label class="form-label" for="course">COURSE</label>
+                        <select
+                           class="form-control"
+                            id="course">
+                            <option class="dropdown" value="">----</option>
+                            <option class="dropdown" value="HTML">HTML</option>
+                            <option class="dropdown" value="JAVA SCRIPT">JAVA SCRIPT</option>
+                            <option class="dropdown" value="CSS">CSS</option>
+                            <option class="dropdown" value="C++">C++</option>
+                        </select>
+                        </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-6"><label class="form-label" for="EMAIL">EMAIL</label>
+                        <input
+                           class="form-control"
+                            type="email" size="30" name="email" id="email" placeholder="Email-Id" />
                     </div><br>
-              <div class="col"> <label class="form-label" for="PHONE">PHONE</label>
-                <input
-                   class="form-control"
-                    type="text" name="PHONE" id="phone" placeholder="Phone Number" />
+                    <div class="col-6"> <label class="form-label" for="PHONE">PHONE</label>
+                        <input
+                           class="form-control"
+                            type="text" name="PHONE" id="phone" placeholder="Phone Number" />
+                    </div>
                 </div>
-            <br>
-            
-            <div ><br><label class="form-label" for="certificate">CERTIFICATE</label><br>
+           
+            <div class="row">
+            <div class="col-12"><br><label class="form-label" for="certificate">CERTIFICATE</label><br>
                 <input  type="file" class="form-control" id="file" name="file" accept="application/pdf" onchange="fileUploaded()">
+                </div>
+                </div>
+                <div>
                 <a href="#" onclick="v_file()"><textarea style="display:none;"class="form-control" id="file7"
                         disabled></textarea></a>
-                        </div><br>
+                        </div>
+                
                <div> 
                    <button class="btn btn-info" style="display:none;" id="f_edit">EDIT</button>
                 </div><br>
-                <div><label class="form-label" for="photo">PHOTO</label><br>
-                <input type="file" id="photo" class="form-control" name="photo" accept=".jpg, .jpeg"  onchange="imageUploaded()">
+                <div class="row">
+                <div class="col-12"><label class="form-label" for="photo">PHOTO</label><br>
+                <input type="file" id="photo" class="form-control" name="photo" accept=".jpg, .jpeg" onchange="imageUploaded()">
+                </div>
+                </div>
+                <div>
                 <a href="#" onclick="v_photo()"><textarea style="display:none;" class="form-control" id="photo7"
                         disabled></textarea></a>
-                        </div><br>
+                        </div>
                <div>
                         <button class="btn btn-info "style="display:none;"  id="p_edit">EDIT</button>
                         </div>
-            </div>            
+                      
                         <br>
                <div><center>
                         <input class="btn btn-primary" id="submit" type="submit" value="SUBMIT" />
@@ -145,7 +153,59 @@
     <br>
 </div>
 
-        
+        <div class="container">
+            <!-- The Modal -->
+            <div class="modal fade pl-0"  id="myModal">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <br>
+                    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <center><b><p>CERTIFICATE<p></b></center>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="modal-body">                           
+                    <p id=hdg></p>
+                  <img id="mg1" src="" width="100%" heigth="100%" alt="image"/><br>
+                  </div>
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <a id="mg3" class="btn btn-secondary" href="" download=""> Dowload</a>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="container">
+            <!-- The Modal -->
+            <div class="modal fade pl-0"  id="myModal1">
+              <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                   
+                    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <center><b><p>FILE<p></b></center>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="modal-body">                           
+                    <p id=hdg1></p>
+                  <iframe id="fl1" src="" width="100%" heigth="100%" alt="file"></iframe><br>
+                  </div>
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <a id="fl3" class="btn btn-secondary" href="" download=""> Dowload</a>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           
        
 
@@ -196,61 +256,6 @@
     <br>
     <!--</div>-->
 </div>
-<div class="container">
-           
-            <div class="modal fade pl-0"  id="myModal">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <br>
-                    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
-                  
-                  <div class="modal-header">
-                    <center><b><p>CERTIFICATE<p></b></center>
-                  </div>
-                
-                  <div class="modal-body">                           
-                    <p id=hdg></p>
-                  <img id="mg1" src="" width="100%" heigth="100%" alt="image"/><br>
-                  </div>
-                  
-                  <div class="modal-footer">
-                    <a id="mg3" class="btn btn-secondary" href="" download=""> Dowload</a>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          
-          <div class="container">
-           
-            <div class="modal fade pl-0"  id="myModal1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
-                    <br>
-                    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
-                 
-                  <div class="modal-header">
-                    <center><b><p>FILE<p></b></center>
-                  </div>
-                  
-                  <div class="modal-body">                           
-                    <p id=hdg1></p>
-                  <iframe id="fl1" src="" width="100%" heigth="100%" alt="file"></iframe><br>
-                  </div>
-                  
-                  <div class="modal-footer">
-                    <a id="fl3" class="btn btn-secondary" href="" download=""> Dowload</a>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
 </body>
 
 </html>
