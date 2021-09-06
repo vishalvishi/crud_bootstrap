@@ -50,6 +50,7 @@ function dataView(actionId, indexData) {
                 mb = element;
             }
         });
+         
         console.log(mb, "mb value");
         $("#name").val( mb.name);
         $("#name").prop('disabled', false);
